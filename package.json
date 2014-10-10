@@ -1,0 +1,20 @@
+{
+  "name": "audioserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "colors": "^1.0.3",
+    "lame": "^1.1.1",
+    "node-gpio": "^0.1.1",
+    "node-mplayer": "0.0.3",
+    "socket.io": "^1.1.0",
+    "speaker": "^0.2.1"
+  }
+}

@@ -18,7 +18,9 @@ module.exports = function (butler, done) {
         this.log('Client connected from ' + socket.handshake.address);
         socket.on('toggle', butler.toggle.bind(butler));
         socket.on('queue', butler.queue.bind(butler));
-        socket.on('nextone', butler.next.bind(butler));
+        socket.on('nextone', butler.nextone.bind(butler));
+        socket.on('butler:volumeup', butler.volumeUp.bind(butler));
+        socket.on('butler:volumedown', butler.volumeDown.bind(butler));
         socket.on('disconnect', function () {
             that.log('Client disconnected from ' + socket.handshake.address);
             this.removeAllListeners();
@@ -29,6 +31,10 @@ module.exports = function (butler, done) {
     }).bind(this));
     io.on('error', function (err) {
         bulter.error(err);
+    });
+
+    butler.on("butler:play", function () {
+        io.emit("butler:play");
     });
 
     server.listen(8008);

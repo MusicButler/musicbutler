@@ -28,8 +28,19 @@
                         socket.emit('nextone');
                         break;
                     }
+                    case 38: {
+                        socket.emit('butler:volumeup');
+                        break
+                    }
+                    case 40: {
+                        socket.emit('butler:volumedown');
+                        break
+                    }
                 }
             }
+            socket.on("butler:play", function () {
+                console.log("PLAY");
+            });
         </script>
     </body>
 </html>

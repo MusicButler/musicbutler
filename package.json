@@ -6,17 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "musicbutler": "./bin/musicbutler"  
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "async": "^0.9.0",
     "colors": "^1.0.3",
-    "lame": "^1.1.1",
-    "node-gpio": "^0.1.1",
-    "node-ir": "^1.0.1",
-    "node-mplayer": "0.0.3",
-    "request": "^2.45.0",
-    "socket.io": "^1.1.0",
-    "speaker": "^0.2.1"
+    "node-ghettoblaster": "*"
   }
 }

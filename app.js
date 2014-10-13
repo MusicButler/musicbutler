@@ -9,10 +9,9 @@ var assLoader = new AssistantLoader(butler);
 assLoader.init();
 assLoader.hireAssistants(function () {
     butler.sortParsers();
-    butler.queue(test_url);
-    butler.queue("../door/song.mp3");
-    butler.queue("fobgofjdsbglsfndmg");
-    butler.queue("https://www.youtube.com/watch?v=NlmezywdxPI");
+    butler.queue({url: test_url});
+    butler.queue({url: "../door/song.mp3", title: "Survival", artist: "Eminem", cover: "http://upload.wikimedia.org/wikipedia/en/4/43/Eminem_-_Survival_Artwork.jpg"});
+    butler.queue({url: "https://www.youtube.com/watch?v=NlmezywdxPI"});
     butler.play();
 });
 

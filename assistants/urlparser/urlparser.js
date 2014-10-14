@@ -1,11 +1,11 @@
 var regex = require('./urlregex').regex;
 
-function defaultParser (input, done) {
-    return done(input.match(regex) ? input : false);
+function defaultParser (song, done) {
+    return done(song.url.match(regex) ? song : false);
 }
 
-function test (input, done) {
-    return done(input.match(regex));
+function test (song, done) {
+    return done(song.url.match(regex));
 }
 
 module.exports = function (player, done) {

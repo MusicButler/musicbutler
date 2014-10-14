@@ -1,9 +1,9 @@
 var fs = require('fs');
-function fileParser (input, done) {
-    return done(fs.existsSync(input) ? input : false);
+function fileParser (song, done) {
+    return done(fs.existsSync(song.url) ? song : false);
 }
-function test (input, done) {
-    return done(fs.existsSync(input));
+function test (song, done) {
+    return done(fs.existsSync(song.url));
 }
 module.exports = function (butler, done) {
     butler.parsers.push({order: 100, check: test, func: fileParser, type: "File"});
